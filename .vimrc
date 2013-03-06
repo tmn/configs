@@ -18,5 +18,6 @@ set shiftwidth=4
 nnoremap å :tabnew<cr>
 nnoremap ø :tabprev<cr>
 nnoremap æ :tabnext<cr>
+nnoremap @ :! pdflatex 
 
 
