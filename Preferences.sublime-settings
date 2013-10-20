@@ -1,6 +1,7 @@
 // Requirements:
 // - Sublime Package manager ( https://sublime.wbond.net/ )
-// - Soda Theme ( http://levien.com/type/myfonts/inconsolata.html )
+// - Soda Theme
+// - Inconsolata ( http://levien.com/type/myfonts/inconsolata.html )
 
 {
   "font_face": "Inconsolata",
