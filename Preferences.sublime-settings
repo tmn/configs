@@ -5,7 +5,7 @@
 {
   "font_face": "Inconsolata",
   "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-  "draw_white_space": "all",
+  "draw_white_space": "selected",
   "font_size": 14,
   "ignored_packages":
   [
