@@ -8,6 +8,8 @@ Files
 
 aliases			Much used aliases
 
+atom			Install packages for atom
+
 brew.sh		     	Install some defaults on the system
 
 .emacs			My emacs configs. Very little interesting stuff going on
