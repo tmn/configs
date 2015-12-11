@@ -1,17 +1,19 @@
 My configs and dotfiles
 
 
+
+
 Files
 -----
 
-aliases				Much used aliases
+aliases			Much used aliases
 
-brew.sh			     	Install some default on the system
+brew.sh		     	Install some defaults on the system
 
-.emacs				My emacs configs. Very little interesting stuff going on
-				here at the moment.
+.emacs			My emacs configs. Very little interesting stuff going on
+			here at the moment.
 
-.vimrc				Funky vim config. See for yourself.
+.vimrc			Funky vim config. See for yourself.
 
-Preferences.sublime-settings	Some default preferences for Sublime (depends on some
-				packages)
+Preferences		Some default preferences for Sublime (depends on some
+.sublime-settings	packageS)
