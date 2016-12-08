@@ -6,14 +6,9 @@ My configs and dotfiles
 Files
 -----
 
-aliases			Much used aliases
-
 atom			Install packages for atom
 
 brew.sh		     	Install some defaults on the system
-
-.emacs			My emacs configs. Very little interesting stuff going on
-			here at the moment.
 
 .vimrc			Funky vim config. See for yourself.
 
