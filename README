@@ -1,4 +1,12 @@
-My configs and dotfiles
+
+
+                My configs and dotfiles
+
+
+Setup
+-----
+
+Run the bootstrap scripts to get started: sh scripts/bootstrap
 
 
 
@@ -6,9 +14,13 @@ My configs and dotfiles
 Files
 -----
 
-atom			Install packages for atom
+.config/                Directory containing the configs for
+                        various applications
 
-brew.sh		     	Install some defaults on the system
+scripts/                Directory containing bash scripts for various
+                        actions and setups
+
+scripts/bootstrap       Bootstraps the common config files
 
 .vimrc			Funky vim config. See for yourself.
 
