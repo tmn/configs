@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 echo Install all AppStore and XCode at first!
 read -p "Press any key to continue..." -n1 -s
 echo '\n'
@@ -10,7 +11,7 @@ brew upgrade
 echo Install essentials
 
 brew install wget
-brew install zsh
+brew install fish
 brew install git
 brew install emacs
 brew install node

@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ln -s ${PWD}/.vimrc ~/.vimrc
 ln -s ${PWD}/.editorconfig ~/.editorconfig
 ln -s ${PWD}/.bash_profile ~/.bash_profile
+ln -s ${PWD}/.config/fish/ ~/.config/fish/

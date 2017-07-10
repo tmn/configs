@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # UI themes
 apm install atom-material-ui
 

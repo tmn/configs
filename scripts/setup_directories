@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ ! -d ${HOME}/.config ]; then
+    mkdir -p ${HOME}/.config;
+fi
+
+if [ ! -d ${HOME}/.npm-global ]; then
+    mkdir -p ${HOME}/.npm-global;
+fi
