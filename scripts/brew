@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 
-echo Install all AppStore and XCode at first!
-read -p "Press any key to continue..." -n1 -s
-echo '\n'
-
 echo Updates brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 brew update
 brew upgrade
 
-echo Install essentials
+brew tap d12frosted/emacs-plus
 
+echo Install essentials
 brew install wget
 brew install fish
 brew install git
-brew install emacs
-brew install node
+brew install emacs-plus --without-spacemacs-icon --with-natural-title-bar
 brew install tmux
 brew install mosh
+brew install nodejs
 
 brew cleanup
