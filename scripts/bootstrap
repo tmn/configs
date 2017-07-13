@@ -1,6 +1,64 @@
 #!/usr/bin/env bash
 
-ln -s ${PWD}/.vimrc ~/.vimrc
-ln -s ${PWD}/.editorconfig ~/.editorconfig
-ln -s ${PWD}/.bash_profile ~/.bash_profile
-ln -s ${PWD}/.config/fish/ ~/.config/fish/
+platformTmp="$(uname -s)"
+
+case "${platformTmp}" in
+    Linux*)   platform=Linux;;
+    Darwin*)  platform=macOS;;
+    CYGWIN*)  platforme=Cygwin;;
+    MINGW*)   platform=MinGw;;
+    *)        platform="UNKNOWN:${platformTmp}":
+esac
+
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+echo 'Setup directories'
+sh ${PWD}/scripts/setup_directories
+
+echo 'Install dependencies'
+if [ "${platform}" == "macOS" ]; then
+    echo 'Found macOS...'
+    sh ${PWD}/scripts/dep_mac
+    if [ $? -eq 0 ]; then
+        success "dependencies installed"
+    else
+        fail "error installing dependencies"
+    fi
+fi
+
+echo 'Create aliases'
+
+if [ ! -f ${HOME}/.vimrc ]; then
+    ln -vs ${PWD}/.vimrc ~/.vimrc
+    success "${HOME}/.vimrc created"
+else
+    info "${HOME}/.vimrc exists"
+fi
+
+if [ ! -f ${HOME}/.editorconfig ]; then
+    ln -vs ${PWD}/.editorconfig ~/.editorconfig
+    success "${HOME}/.editorconfig created"
+else
+    info "${HOME}/.editorconfig exists"
+fi
+
+if [ ! -d ${HOME}/.config/fish/ ]; then
+    ln -vs ${PWD}/.config/fish/ ${HOME}/.config
+    success "${HOME}/.config/fish/ created"
+else
+    info "${HOME}/.config/fish/ exists"
+fi
+
+echo 'done'
