@@ -12,9 +12,9 @@ echo Install essentials
 brew install wget
 brew install fish
 brew install git
-brew install emacs-plus --without-spacemacs-icon --with-natural-title-bar
+brew install emacs-plus --with-modern-icon --without-spacemacs-icon
 brew install tmux
 brew install mosh
 brew install nodejs
 
-brew cleanup
+brew cleanup -s
