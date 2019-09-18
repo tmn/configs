@@ -21,8 +21,3 @@ scripts/                Directory containing bash scripts for various
                         actions and setups
 
 scripts/bootstrap       Bootstraps the common config files
-
-.vimrc			Funky vim config. See for yourself.
-
-Preferences		Some default preferences for Sublime (depends on some
-.sublime-settings	packageS)
