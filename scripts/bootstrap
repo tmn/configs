@@ -30,7 +30,7 @@ sh ${PWD}/scripts/setup_directories
 echo 'Install dependencies'
 if [ "${platform}" == "macOS" ]; then
     echo 'Found macOS...'
-    sh ${PWD}/scripts/dep_mac
+    sh ${PWD}/scripts/macos/dependencies
     if [ $? -eq 0 ]; then
         success "dependencies installed"
     else
@@ -38,27 +38,41 @@ if [ "${platform}" == "macOS" ]; then
     fi
 fi
 
-echo 'Create aliases'
+if [ "${platform}" == "Linux" ]; then
+    echo 'Found Linux...'
+    sh ${PWD}/scripts/linux/dependencies
+    if [ $? -eq 0 ]; then
+        success "dependencies installed"
+    else
+        fail "error installing dependencies"
+    fi
 
-if [ ! -f ${HOME}/.vimrc ]; then
-    ln -vs ${PWD}/.vimrc ~/.vimrc
-    success "${HOME}/.vimrc created"
-else
-    info "${HOME}/.vimrc exists"
+    echo 'Create Linux Aliases'
+    if [ ! -f ${HOME}/.bash_profile ]; then
+        ln -vs ${PWD}/.bash_profile ~/.bash_profile
+        success "${HOME}/.bash_profile created"
+    else
+        info "${HOME}/.bash_profile already exists"
+    fi
 fi
+
+echo 'Create aliases'
 
 if [ ! -f ${HOME}/.editorconfig ]; then
     ln -vs ${PWD}/.editorconfig ~/.editorconfig
     success "${HOME}/.editorconfig created"
 else
-    info "${HOME}/.editorconfig exists"
+    info "${HOME}/.editorconfig already exists"
 fi
 
-if [ ! -d ${HOME}/.config/fish/ ]; then
-    ln -vs ${PWD}/.config/fish/ ${HOME}/.config
-    success "${HOME}/.config/fish/ created"
+echo 'Clone .emacs.d'
+
+if [ ! -d ${HOME}/.emacs.d ]; then
+    git clone https://github.com/tmn/.emacs.d.git ~/.emacs.d
+    success "${HOME}/.emacs.d cloned"
 else
-    info "${HOME}/.config/fish/ exists"
+    info "${HOME}/.emacs.d/ already exists"
 fi
+
 
 echo 'done'

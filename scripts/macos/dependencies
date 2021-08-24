@@ -4,7 +4,7 @@ echo 'Install developer tools'
 xcode-select --install
 
 echo 'Install brew'
-sh ${PWD}/scripts/brew
+sh ${PWD}/scripts/macos/brew
 
 echo 'Clone emacs config'
 if [ ! -d "${HOME}/.emacs.d/" ]; then
