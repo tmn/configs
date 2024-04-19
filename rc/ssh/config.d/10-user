@@ -1,0 +1,17 @@
+Host github.com
+     User git
+     Hostname github.com
+     IdentityFile ~/.ssh/github
+     IdentitiesOnly yes
+
+Host trimini.cava
+     User tmn
+     Hostname trimini.cava
+     IdentityFile ~/.ssh/tmn
+     IdentitiesOnly yes
+
+Host pione.cava
+     User tmn
+     Hostname pione.cava
+     IdentityFile ~/.ssh/tmn
+     IdentitiesOnly yes

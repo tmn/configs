@@ -1,0 +1,7 @@
+{
+  ...
+}: {
+  require = [
+    ./darwin/nix.nix
+  ];
+}
