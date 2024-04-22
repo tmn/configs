@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
 if [ ! -d ${HOME}/.config ]; then
-    mkdir -p ${HOME}/.config;
+    mkdir ${HOME}/.config
 fi
 
 if [ ! -d ${HOME}/.npm-global ]; then
-    mkdir -p ${HOME}/.npm-global;
+    mkdir ${HOME}/.npm-global
+
+    if [ ! -d ${HOME}/.npm-global/bin ]; then
+        mkdir ${HOME}/.npm-global/bin
+    fi
 fi

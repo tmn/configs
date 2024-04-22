@@ -31,6 +31,7 @@ echo 'Install dependencies'
 if [ "${platform}" == "macOS" ]; then
     echo 'Found macOS...'
     sh ${PWD}/scripts/macos/dependencies
+
     if [ $? -eq 0 ]; then
         success "dependencies installed"
     else
@@ -41,6 +42,7 @@ fi
 if [ "${platform}" == "Linux" ]; then
     echo 'Found Linux...'
     sh ${PWD}/scripts/linux/dependencies
+
     if [ $? -eq 0 ]; then
         success "dependencies installed"
     else
@@ -65,14 +67,14 @@ else
     info "${HOME}/.editorconfig already exists"
 fi
 
-echo 'Clone .emacs.d'
+# echo 'Clone .emacs.d'
 
-if [ ! -d ${HOME}/.emacs.d ]; then
-    git clone https://github.com/tmn/.emacs.d.git ~/.emacs.d
-    success "${HOME}/.emacs.d cloned"
-else
-    info "${HOME}/.emacs.d/ already exists"
-fi
+# if [ ! -d ${HOME}/.emacs.d ]; then
+#     git clone https://github.com/tmn/.emacs.d.git ~/.emacs.d
+#     success "${HOME}/.emacs.d cloned"
+# else
+#     info "${HOME}/.emacs.d/ already exists"
+# fi
 
 
 echo 'done'
