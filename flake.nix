@@ -90,9 +90,32 @@
             inherit machine;
           };
         };
+
+      nixosBox = arch: pkgBase: homeBase: name:
+        pkgBase.lib.nixosSystem {
+          system = arch;
+          modules = 
+            (commonModules pkgBase)
+            ++ [
+              (./. + "/machines/${name}")
+            ]
+            ++ (
+              if builtins.isNull homeBase
+              then []
+              else [
+                homeBase.nixosModules.home-manager
+                ./common/home.nix
+              ]
+            );
+            specialArgs = {
+              inherit flakes;
+            };
+        };
     in
     {
-
+      nixosConfiguration = {
+        "thinkie" = nixosBox "x86_64-linux" nixpkgs home-manager "thinkie";
+      };
 
       darwinConfigurations = {
         # $ darwin-rebuild build --flake .#tequila
