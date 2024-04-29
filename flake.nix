@@ -4,11 +4,9 @@
   inputs = {
     utils.url = "github:numtide/flake-utils";
 
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-23.11";
-    };
-    # nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -26,15 +24,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs."agenix".inputs."nixpkgs".follows = "nixpkgs";
     };
-    # home-manager-unstable.url = "github:nix-community/home-manager/master";
-    # home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    home-manager-unstable.url = "github:nix-community/home-manager/master";
+    home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-unstable
+    , nixpkgs-master
     , nix-darwin
     , home-manager
+    , home-manager-unstable
     , ragenix
     , flake-utils
     , ...
@@ -94,22 +95,22 @@
       nixosBox = arch: pkgBase: homeBase: name:
         pkgBase.lib.nixosSystem {
           system = arch;
-          modules = 
+          modules =
             (commonModules pkgBase)
             ++ [
               (./. + "/machines/${name}")
             ]
             ++ (
               if builtins.isNull homeBase
-              then []
+              then [ ]
               else [
                 homeBase.nixosModules.home-manager
                 ./common/home.nix
               ]
             );
-            specialArgs = {
-              inherit flakes;
-            };
+          specialArgs = {
+            inherit flakes;
+          };
         };
     in
     {
