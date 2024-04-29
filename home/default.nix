@@ -85,7 +85,7 @@
         ''
           source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh
           setopt PROMPT_SUBST
-          PROMPT='%F{135}tmn%f at %F{166}AirBook%f in %F{118}%~%f$(__git_ps1 " (%s)")
+          PROMPT='%F{135}%n%f at %F{166}%m%f in %F{118}%~%f$(__git_ps1 " (%s)")
           $ '
         '';
     };
