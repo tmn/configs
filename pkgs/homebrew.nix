@@ -25,6 +25,7 @@ _: {
       "jansson"
       "libgccjit"
       "tree-sitter"
+      "yt-dlp"
     ];
 
     casks = [
