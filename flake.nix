@@ -18,14 +18,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     ragenix = {
       url = "github:yaxitech/ragenix";
       inputs."flake-utils".follows = "utils";
       inputs.nixpkgs.follows = "nixpkgs";
-      # inputs."agenix".inputs."nixpkgs".follows = "nixpkgs";
     };
-    home-manager-unstable.url = "github:nix-community/home-manager/master";
-    home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =
@@ -47,8 +49,6 @@
       overlays = [
         ragenix.overlays.default
       ];
-
-
 
       commonModules = pkgBase: [
         ragenix.nixosModules.age
