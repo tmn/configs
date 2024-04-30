@@ -47,7 +47,7 @@
       };
     };
     #
-    stateVersion = "22.05";
+    stateVersion = "23.11";
   };
 
   programs = {
