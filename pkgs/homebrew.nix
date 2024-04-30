@@ -11,20 +11,22 @@ _: {
     taps = [ ];
 
     brews = [
+      "editorconfig"
+      "markdown"
+
       # Needed for exa
       "libgit2"
 
       # Needed for current compiled Emacs - should switch to nix
-      "libjpeg-turbo"
-      "librsvg"
-
       "dbus"
       "gnutls"
-      "imagemagick"
-      "webp"
+      "imagemagick@6"
       "jansson"
       "libgccjit"
+      "libjpeg-turbo"
+      "librsvg"
       "tree-sitter"
+      "webp"
       "yt-dlp"
     ];
 
