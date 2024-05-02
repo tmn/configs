@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+yt-dlp -f best -o "$1" "$2"

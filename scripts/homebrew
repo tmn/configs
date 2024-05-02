@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+brew install \
+ansible \
+autoconf \
+coreutils \
+ctags \
+fd \
+gcc \
+git \
+glslang \
+gnu-sed \
+gnutls \
+gomodifytags \
+gopls \
+gotests \
+gnupg \
+pkg-config \
+grep \
+imagemagick \
+isort \
+jansson \
+ktlint \
+libgccjit \
+librsvg \
+libxml2 \
+markdown \
+mosh \
+ncurses \
+node \
+pipenv \
+shellcheck \
+texinfo \
+tmux \
+tree-sitter \
+wget \
+zsh-completions \
+yt-dlp
+
+brew cleanup -s

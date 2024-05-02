@@ -6,8 +6,8 @@ fi
 
 if [ ! -d ${HOME}/.npm-global ]; then
     mkdir ${HOME}/.npm-global
+fi
 
-    if [ ! -d ${HOME}/.npm-global/bin ]; then
-        mkdir ${HOME}/.npm-global/bin
-    fi
+if [ ! -d ${HOME}/.npm-global/bin ]; then
+    mkdir ${HOME}/.npm-global/bin
 fi

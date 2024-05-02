@@ -1,0 +1,29 @@
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export LDFLAGS="-L/opt/homebrew/opt/ncurses/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ncurses/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ncurses/lib/pkgconfig"
+export MODULAR_HOME=/Users/tmn/.modular
+
+path=(
+    /Applications/Emacs.app/Contents/MacOS
+    /Applications/Emacs.app/Contents/MacOS/bin
+
+    $HOME/.local/bin
+    $HOME/.npm-global/bin
+    $HOME/.config/emacs/bin
+
+    # $HOME/tools/android/cmdline-tools/bin
+    # $HOME/tools/flutter/bin
+
+    $HOME/.modular/pkg/packages.modular.com_mojo/bin
+    
+    # /opt/homebrew/opt/grep/libexec/gnubin
+    # /opt/homebrew/opt/node@20/bin
+    # /opt/homebrew/opt/openjdk/bin
+    # /opt/homebrew/opt/ncurses/bin
+    /opt/homebrew/bin
+    /opt/homebrew/sbin
+
+    $path
+)

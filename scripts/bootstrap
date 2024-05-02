@@ -76,5 +76,14 @@ fi
 #     info "${HOME}/.emacs.d/ already exists"
 # fi
 
+echo 'Clone doom'
+
+if [ ! -d ${HOME}/.config/doom ]; then
+    git clone --branch doom https://github.com/tmn/.emacs.d.git ~/.config/doom
+    success "${HOME}/.config/doom/ cloned"
+else
+    info "${HOME}/.config/doom/ already exists"
+fi
+
 
 echo 'done'
