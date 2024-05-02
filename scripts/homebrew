@@ -5,23 +5,25 @@ ansible \
 autoconf \
 coreutils \
 ctags \
+dbus \
+editorconfig \
 fd \
 gcc \
 git \
 glslang \
 gnu-sed \
+gnupg \
 gnutls \
 gomodifytags \
 gopls \
 gotests \
-gnupg \
-pkg-config \
 grep \
 imagemagick \
 isort \
 jansson \
 ktlint \
 libgccjit \
+libgit2 \
 librsvg \
 libxml2 \
 markdown \
@@ -29,12 +31,15 @@ mosh \
 ncurses \
 node \
 pipenv \
+pkg-config \
 shellcheck \
 texinfo \
 tmux \
 tree-sitter \
 wget \
-zsh-completions \
-yt-dlp
+yt-dlp \
+zsh \
+zsh-autosuggestions \
+zsh-completions
 
 brew cleanup -s

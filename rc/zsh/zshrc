@@ -1,6 +1,6 @@
 ## Prompt
 
-source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 setopt PROMPT_SUBST
 PROMPT='%F{135}%n%f at %F{166}%m%f in %F{118}%~%f$(__git_ps1 " (%s)")
 $ '
@@ -16,14 +16,23 @@ alias lx='exa -lbhHigUmuSa@ --sort=type  --time-style=long-iso --git --color-sca
 
 
 ########## Cargo ##########
-# . "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
 
-########## zsh-completion ##########
+########## Zsh ##########
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
+if (( ${+commands[brew]} )); then
+    # zsh-completion
+    fpath=(
+        $(brew --prefix)/share/zsh-completions
+        $(brew --prefix)/share/zsh/functions
+        $(brew --prefix)/share/zsh/site-functions
+        $fpath
+    )
+    
     autoload -Uz compinit
     compinit
+
+    # zsh-autosuggestions
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi

@@ -120,3 +120,10 @@ if [ ! -f ${HOME}/.editorconfig ]; then
 else
     info "${HOME}/.editorconfig already exists"
 fi
+
+if [ ! -f ${HOME}/.gitignore ]; then
+    ln -vs ${PWD}/rc/.gitignore ~/.gitignore
+    success "${HOME}/.gitignore created"
+else
+    info "${HOME}/.gitignore already exists"
+fi
