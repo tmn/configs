@@ -106,11 +106,25 @@ cargo install --features pcre2 ripgrep
 cargo install exa
 
 
+########## Git ##########
+
+git config --global user.name "Tri Nguyen"
+git config --global user.email mail@trimn.net
 
 ########## rc ##########
 
 if [ ! -d ${HOME}/.config ]; then
     mkdir ${HOME}/.config
+fi
+
+
+# ssh config
+if [ ! -d ${HOME}/.ssh/config.d ]; then
+    ln -vs ${PWD}/rc/ssh/config.d ~/.ssh/config.d
+fi
+
+if [ ! -f ${HOME}/.ssh/config ]; then
+    ln -vs ${PWD}/rc/ssh/config ~/.ssh/config
 fi
 
 
@@ -120,6 +134,7 @@ if [ ! -f ${HOME}/.editorconfig ]; then
 else
     info "${HOME}/.editorconfig already exists"
 fi
+
 
 if [ ! -f ${HOME}/.gitignore ]; then
     ln -vs ${PWD}/rc/.gitignore ~/.gitignore
