@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cava"
+version = "0.1.0"
+description = ""
+authors = ["Tri Nguyen <mail@trimn.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.scripts]
+exec_name = "cava.__main__:__main__"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
