@@ -21,6 +21,27 @@ sudo softwareupdate --install-rosetta --agree-to-license
 
 
 
+########## Zsh ##########
+
+if [ -f ${HOME}/.zcompdump ]; then
+    rm -f ~/.zcompdump; compinit
+fi
+
+if [ ! -f ${HOME}/.zshrc ]; then
+    ln -vs ${PWD}/rc/zsh/zshrc ~/.zshrc
+    success "${HOME}/.zshrc created"
+else
+    info "${HOME}/.zshrc already exists"
+fi
+
+if [ ! -f ${HOME}/.zprofile ]; then
+    ln -vs ${PWD}/rc/zsh/zprofile ~/.zprofile
+    success "${HOME}/.zprofile created"
+else
+    info "${HOME}/.zprofile already exists"
+fi
+
+
 ########## Brew ##########
 
 # Check if homebrew is installed
@@ -58,7 +79,7 @@ sh ${PWD}/scripts/homebrew
 
 ########## Mac App Store ##########
 
-
+# ...
 
 
 ########## Node ##########
@@ -84,14 +105,6 @@ fi
 
 
 
-
-########## Zsh ##########
-
-if [ -f ${HOME}/.zcompdump ]; then
-    rm -f ~/.zcompdump; compinit
-fi
-
-
 ########## Cargo ##########
 
 
@@ -103,7 +116,7 @@ fi
 
 
 cargo install --features pcre2 ripgrep
-cargo install exa
+cargo install eza
 
 
 ########## Git ##########
@@ -142,3 +155,6 @@ if [ ! -f ${HOME}/.gitignore ]; then
 else
     info "${HOME}/.gitignore already exists"
 fi
+
+
+
