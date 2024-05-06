@@ -3,6 +3,7 @@
 brew install \
 ansible \
 autoconf \
+cmake \
 coreutils \
 ctags \
 dbus \
@@ -34,6 +35,7 @@ pipenv \
 pkg-config \
 shellcheck \
 texinfo \
+tig \
 tmux \
 tree-sitter \
 wget \
