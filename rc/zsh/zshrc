@@ -7,12 +7,12 @@ $ '
 
 ########## Aliases ##########
 
-alias l='exa -lbF --git  --sort=type'
-alias la='exa -lbhHigUmuSa --sort=type --time-style=long-iso --git --color-scale'
-alias ll='exa -lbGF --git  --sort=type'
-alias llm='exa -lbGd --git --sort=modified'
-alias ls='exa --sort=type'
-alias lx='exa -lbhHigUmuSa@ --sort=type  --time-style=long-iso --git --color-scale'
+alias l='eza -lbF --git  --sort=type'
+alias la='eza -lbhHigUmuSa --sort=type --time-style=long-iso --git --color-scale'
+alias ll='eza -lbGF --git  --sort=type'
+alias llm='eza -lbGd --git --sort=modified'
+alias ls='eza --sort=type'
+alias lx='eza -lbhHigUmuSa@ --sort=type  --time-style=long-iso --git --color-scale'
 
 
 ########## Cargo ##########
